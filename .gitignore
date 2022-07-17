@@ -73,3 +73,5 @@ tests/__init__.py
 # Development task artifacts
 default.db
 venv/
+.json
+.csv

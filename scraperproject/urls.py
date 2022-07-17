@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', views.index, name='products'),
     path('products/<int:id>', views.detaills, name='detaills'),
+    path('df', views.load_csv, name='load_csv')
 ]
