@@ -20,6 +20,10 @@ from products import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', views.index, name='products'),
+    # path('products/', views.IndexView.as_view(), name='products'),
+
     path('products/<int:id>', views.detaills, name='detaills'),
+    path('products/order/<str:field>', views.order, name='order'),
+    
     path('df', views.load_csv, name='load_csv')
 ]

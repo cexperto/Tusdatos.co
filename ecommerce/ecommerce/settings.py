@@ -93,5 +93,3 @@ import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'scraperproject.settings'
 # If you you use django outside of manage.py context, you 
 # need to explicitly setup the django
-import django
-django.setup()

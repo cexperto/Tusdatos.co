@@ -17,8 +17,8 @@ class AllinoneSpider(scrapy.Spider):
     start_urls = ['https://webscraper.io/test-sites/e-commerce/allinone/']
     
     custom_settings = {
-        'FEED_URI': 'products.csv',
-        'FEED_FORMAT': 'csv',
+        'FEED_URI': 'products.json',
+        'FEED_FORMAT': 'json',
         'FEED_EXPORT_ENCODING': 'utf-8'
     }
 
@@ -47,14 +47,13 @@ class AllinoneSpider(scrapy.Spider):
         reviews = response.xpath('//div[@class="thumbnail"]/div[@class="ratings"]/p[1]/text()').getall()
         ratings = response.xpath('//div[@class="thumbnail"]/div[@class="ratings"]/p/@data-rating').getall()
 
+
         yield{
-            categorie:{
-                'titles': titles,
-                'price' : price,
-                'description': description,
-                'images' : images,
-                'reviews' : reviews,
-                'ratings' : ratings
-            }
-            
+            'categorie' : categorie,
+            'titles': titles,
+            'price' : price,
+            'description': description,
+            'images' : images,
+            'reviews' : reviews,
+            'ratings' : ratings
         }
