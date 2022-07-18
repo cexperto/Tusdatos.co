@@ -3,16 +3,34 @@
 
 project challenge for Tusdatos.co
 
+
+option:
+For do more easy process execute:
+
+./cli 
+
+When the server already runing yo can pass to step 5 and 7 ignore 6 step
+
+
 1. clone this repo
 2. get in folder
-3. run 
+3. run:
+
+python -m venv venv
+
+source venv/scripts/activate
+
+
+pip install -r requirements.txt
+
+
 python manage.py runserver
 
 4. run 
 python manage.py makemigrations
 python manage.py migrate
 
-5. create user, run
+5. create user, run:
 python manage.py createsuperuser
 
 insert username
@@ -28,7 +46,7 @@ password: password
 In the browser insert your credentials:
 http://localhost:8000/admin/
 
-Now you have to run the scraper
+6. Now you have to run the scraper
 run:
 
 cd ecommerce/
@@ -37,7 +55,7 @@ Run command:
 
 scrapy crawl allinone
 
-In the browser:
+7. In the browser:
 http://localhost:8000/df/
 
 
@@ -64,6 +82,14 @@ http://localhost:8000/df/
   GET /admin/logout/
   http://localhost:8000/admin/logout/
 ```
+
+#### insert data in DB
+
+```http
+  GET /df/
+  http://localhost:8000/df/
+```
+
 
 #### Get all items
 
