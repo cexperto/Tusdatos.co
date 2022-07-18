@@ -76,4 +76,4 @@ venv/
 .json
 .csv
 migrations/
-.sqlite3
+db.sqlite3
