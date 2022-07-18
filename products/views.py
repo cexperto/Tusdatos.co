@@ -8,7 +8,10 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
+def home(request):
+    return HttpResponse('welcome to scrapy app, follow the readme file')
+
 @login_required
 def index(request):
     data = list(Products.objects.values())
@@ -31,7 +34,7 @@ def order(request, field):
 def load_csv(request):
     jf = json_formated()
     insert_df(jf)
-    return HttpResponse('hey')
+    return HttpResponse('scrapy executed')
     
 
 def json_formated():
